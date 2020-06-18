@@ -82,7 +82,7 @@ function getBldgHeights() {
   let heightsStr = buildingHeightsArea.value.replace(/ /g,'');
   let strLength = heightsStr.length;
   let heightsArr = [];
-  let regex = RegExp('^[1-9]+(,[1-9]+)*$');
+  let regex = RegExp('^[0-9]+(,[0-9]+)*$');
 
   if(heightsStr.slice(length-1) == ',') {
     // if the last character is a comma, just remove it
@@ -154,7 +154,7 @@ function whoCanSee() {
 function validateData() {
   let dataStr = document.getElementById("buildingHeights_id").value.trim();
   let length = dataStr.length;
-  let regex = RegExp('[1-9]|,');
+  let regex = RegExp('[0-9]|,');
 
   hideErrorMsg();
 
