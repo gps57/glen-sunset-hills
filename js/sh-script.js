@@ -117,6 +117,7 @@ function showErrorMsg(msg) {
 
   label.innerHTML = msg
   label.classList.remove("text-muted");
+  label.classList.remove("font-italic");
   label.classList.add("text-danger");
 
 } // end showErrorMsg()
@@ -124,9 +125,10 @@ function showErrorMsg(msg) {
 function hideErrorMsg() {
   let label = document.getElementById("bldgHeightsLabel");
 
-  label.innerHTML = "Enter heights for your buildings..."
+  label.innerHTML = "Building heights:"
   label.classList.remove("text-danger");
   label.classList.add("text-muted");
+  label.classList.add("font-italic");
 
 } // end hideErrorMsg()
 
@@ -159,7 +161,7 @@ function validateData() {
   hideErrorMsg();
 
   if(length > 0 && !regex.test(dataStr[length-1])) {
-    showErrorMsg("Only whole numbers separated by a comma are allowed.");
+    showErrorMsg("Enter only whole numbers separated by a comma.");
   }
 } // end validateData()
 
