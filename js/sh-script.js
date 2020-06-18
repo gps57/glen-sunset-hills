@@ -116,8 +116,6 @@ function showErrorMsg(msg) {
   let label = document.getElementById("bldgHeightsLabel");
 
   label.innerHTML = msg
-  label.classList.remove("text-muted");
-  label.classList.remove("font-italic");
   label.classList.add("text-danger");
 
 } // end showErrorMsg()
@@ -127,8 +125,6 @@ function hideErrorMsg() {
 
   label.innerHTML = "Building heights:"
   label.classList.remove("text-danger");
-  label.classList.add("text-muted");
-  label.classList.add("font-italic");
 
 } // end hideErrorMsg()
 
@@ -154,10 +150,21 @@ function whoCanSee() {
 } // end whoCanSee()
 
 function validateData() {
-  let dataStr = document.getElementById("buildingHeights_id").value.trim();
+  let heightField = document.getElementById("buildingHeights_id")
+  let dataStr = heightField.value.trim();
   let length = dataStr.length;
   let regex = RegExp('[0-9]|,');
 
+  // if the field is empty, the placeholder string will be visible.active
+  // it should be in italic
+  if (heightField.value.length == 0) {
+    // turn on italic
+    heightField.classList.add("font-italic");
+  } else {
+    // turn off italic
+    heightField.classList.remove("font-italic");
+  }
+  
   hideErrorMsg();
 
   if(length > 0 && !regex.test(dataStr[length-1])) {
