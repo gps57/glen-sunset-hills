@@ -1,0 +1,117 @@
+!<!doctype html>
+<html lang="en">
+  <head>
+    <title>Sunset Hills by Glen</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  </head>
+  <body>
+    <header>
+      <!-- header stuff -->
+    </header>
+
+    <!-- main container -->
+    <article class = "container">
+
+      <!-- row for instructions and data entry -->
+      <section class="row mb-3 d-flex flex-column flex-sm-row align-items-sm-center">
+
+        <!-- Intructions -->
+        <section class="col-md-6">
+          <div class="card justify-content-center mb-3">
+            <div class="card-body">
+              <div class="card-title bg-light">
+                <h3>Instructions</h3>
+              </div>
+              <div class="card-text">
+                <ul class="list-group mb-3">
+                  <li class="list-group-item list-group-item-success">
+                    Enter building heights as whole numbers, separated by commas.
+                  </li>
+                  <li class="list-group-item list-group-item-success">
+                    Click the "Build them" button.  The buildings will be built.
+                  </li>
+                  <li class="list-group-item list-group-item-success">
+                    Click the "Who can see me" button to show which buildings can see the sunset.
+                  </li>
+                </ul>
+                <p>
+                  <strong>
+                    After clicking the "Who can see me" button, buildings that can see the sunset will be a solid opaque color.
+                    Buildings that cannot see the sunset will be lighter and more transparent.
+                  </strong>
+                </p>
+              </div>
+            </div>
+          </div>  
+        </section> <!-- end col for instructions -->
+        
+        <!-- data entry -->
+        <section class="col-md-6 align-items-end">
+          <div class="row">
+            <label for="buildingHeights"
+              class="col text-muted mb-1 ml-2"
+              id="bldgHeightsLabel">              
+                Enter heights for your buildings...             
+            </label>
+          </div>
+          <div class="input-group mb-2">
+            <input type="text"
+              class="form-control"
+              name="buildingHeights"
+              id="buildingHeights_id"
+              placeholder="whole numbers only, comma seperated">
+            <div class="input-group-append">
+              <button
+                id="buildButton"
+                class="btn btn-success"
+                type="button">
+                Build them
+              </button>
+            </div>
+          </div>
+        </section> <!-- end col for data entry -->
+
+      </section> <!-- end row for instructions and data entry -->
+
+      <!-- row for buildings -->
+      <section id="buildingsArea" class="row flex justify-content-md-center mb-5 d-none">
+
+        <!-- col for the sun image -->
+        <div id="sunArea" class="col-3 align-self-end">
+          <img src="./images/sun.png"
+            class="img-fluid my-auto">
+          
+          <!-- button located under sun image -->
+          <div>
+            <button
+              id="whoCanSeeButton"
+              class="btn btn-success mt-2"
+              type="button">
+              Who can see me as I set in the west?
+            </button>
+          </div>
+        </div> <!-- end col for sun image -->
+
+        <!-- col for the chart which represents the buildings -->
+        <div class="col-8 align-self-end">
+          <canvas id="myChart"></canvas>
+        </div> <!-- end col for chart-->
+
+      </section> <!-- end row for buildings -->
+
+    </article> <!-- end container -->
+    
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
+    <script src="./js/sh-script.js"></script>
+</body>
+</html>
